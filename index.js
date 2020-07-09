@@ -40,24 +40,30 @@
 */
 
 // counter1 code
-// function counterMaker() {
-//   let count = 0;
-//   return function counter() {
-//    return count++;
-//   }
-// }
+function counterMaker() {
+  let count = 0;
+  return function counter() {
+   return count++;
+  }
+}
 
-// console.log(counter());
 
-// const counter1 = counterMaker();
+const counter1 = counterMaker();
+
+console.log(counter1());
+console.log(counter1());
+console.log(counter1());
 
 // // counter2 code
-// let count = 0;
+let count = 0;
 
-// function counter2() {
-//   return count++;
-// }
+function counter2() {
+  return count++;
+}
 
+console.log(counter2());
+console.log(counter2());
+console.log(counter2());
 
 /* Task 2: inning() 
 
@@ -85,12 +91,25 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(func, numInnings){
 
-  /*Code Here*/
+  let homeScore = 0;
+  let awayScore = 0;
+
+  for (let i = numInnings; i > 0; i--) {
+    homeScore += func();
+  } 
+
+  for (let i = numInnings; i > 0; i--) {
+    awayScore += func();
+  } 
+  
+  return {"Home": homeScore, "Away": awayScore};
+
 
 }
 
+console.log(finalScore(inning, 5));
 /* Task 4: 
 
 Create a function called `scoreboard` that accepts the following parameters: 
