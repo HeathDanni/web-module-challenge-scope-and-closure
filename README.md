@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+  A closure is a way in which we can limit the scope of our variables.  Without closures, variables are global and can be accessed by any other code, but with a closure, we can limit where they can be accessed.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+    The closure is inside the function. The variable "newRoll" which is inside the brackets will have a private scope and can only be accessed by the function, while the other variables in this code can be accessed globaly.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+    Each time "dansRoll" is called the name will stay the same, but the value of the roll (newRoll variable) can be changed inside of the function.
+
 c. What is the lexical scope of `newRoll`? 
+
+    The lexical scope of 'newRoll' is block scope because it is a constant. It can only be accessed by the return function inside the 'personalDice' function.
 
 ### Task 2c - Exit Ticket
 

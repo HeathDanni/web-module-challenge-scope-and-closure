@@ -176,4 +176,4 @@ function scoreboard(func1, func2, num) {
  }
 
 
-console.log(scoreboard(getInningScore, inning, 10));
+console.log(scoreboard(getInningScore, inning, 4));
