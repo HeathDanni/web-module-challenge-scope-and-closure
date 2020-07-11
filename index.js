@@ -27,16 +27,19 @@
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- *      
- * In counter1, count is declared and initialized inside the function, so it will reset each time the function is run.  In counter2, count is declared and initialized outside the function so it will not reset and will increment when the function is run multiple times.
+ *  
+ *    In counter1 the variable 'count' is inside the function. In counter2 'count' is global.
+
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ *  
  * 
- * counter2 uses a closure because count is declared and initialized outside of the function brackets so it will not reset.
+ *    counter1 uses a closure.  I can tell because 'count' is declared inside the function which closes it from the global object.
+
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- * counter one would be preferable if you want to reset count each time
- *
+  
+ *counter1 would be preferable if you didn't want 'count' to be accessed or changed outside of the function.  counter2 would be preferable if need it to be a global variable that could be changed by other functions.
 */
 
 // counter1 code
@@ -110,6 +113,7 @@ function finalScore(func, numInnings){
 }
 
 console.log(finalScore(inning, 5));
+
 /* Task 4: 
 
 Create a function called `scoreboard` that accepts the following parameters: 
@@ -131,8 +135,8 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(func1, func2, num) {
+  
 }
 
 
