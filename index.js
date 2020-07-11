@@ -136,18 +136,44 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 const getInningScore = function(inningNum, awayTeam, homeTeam) {
-  return `${inningNum} inning: ${awayTeam} - ${homeTeam}`;
+  let str = "";
+  let inningStr = inningNum.toString();
+
+  if (inningStr[inningStr.length-1] === '1') {
+    str = "st inning";
+    } else if (inningStr[inningStr.length-1] === '2'){
+      str = "nd inning";
+     } else if (inningStr[inningStr.length-1] === '3') {
+       str = "rd inning";
+    } else if (inningStr === "") {
+      str = "Final Score";
+    } else {
+      str = "th inning";
+    }
+
+  return `${inningNum}${str}: ${awayTeam} - ${homeTeam}`;
 }
 
-// console.log(getInningScore(10, 4, 5));
+// console.log(getInningScore(83, 4, 5));
 
 function scoreboard(func1, func2, num) {
  let awayTeam = 0;
  let homeTeam = 0;
+ let string = [];
+ 
+ for (let i = 0; i < num; i++) {
     awayTeam += func2();
     homeTeam += func2();
-    return func1(num, awayTeam, homeTeam); 
-  
-}
+    let finalInning = "";
 
-console.log(scoreboard(getInningScore, inning, 3));
+    if (i+1 === num) {
+      string += (`${func1(finalInning, awayTeam, homeTeam)}\n`);
+    } else {
+      string += (`${func1(i+1, awayTeam, homeTeam)}\n`);
+  }
+  
+ } return string;
+ }
+
+
+console.log(scoreboard(getInningScore, inning, 10));
